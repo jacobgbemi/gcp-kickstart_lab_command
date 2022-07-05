@@ -1,7 +1,9 @@
-Task 1: Create a virtual machine instance
+### Task 1: Create a virtual machine instance
 1. Create virtual machine instance as instance1, with Window Server OS.
 2. In the cloud shell, You can list the active account name with this command:
-	gcloud auth list
+```
+gcloud auth list
+```
 3. In the cloud shell, You can list the project ID with this command:
 	gcloud config list project
 
