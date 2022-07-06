@@ -92,7 +92,7 @@
 	```
 	gcloud compute ssh gcelab2 --zone $ZONE
 	```
-2. To continue, type ```Y````.
+2. To continue, type ```Y```.
 3. To leave the passphrase empty, press ```ENTER``` twice.
 4. Install ```nginx web server``` on to virtual machine:
 	```
