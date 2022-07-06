@@ -9,7 +9,7 @@ This is documentation of some few commands I learned when preparing for Google C
 - Start with the files in this folder, [fundamentals](https://github.com/jacobgbemi/gcp-kickstart_lab_command/tree/main/fundamentals).
 - Then explore the rest of the files based on  your learning progress
 - Remember that you can perform most of the tasks in ```google cloud console```, with using the ```cammand line interface```
-- Also, note the Google always update these programs, therefore double check to ensure the commands are still valid.
+- Also, note that Google always update these programs, therefore double check to ensure the commands are still valid.
 
 
 ### Acknowlegement
