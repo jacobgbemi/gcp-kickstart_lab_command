@@ -53,7 +53,7 @@
 	```
 	dd if=/dev/urandom | gzip -9 >> /dev/null &
 	```
-### Create a Monitoring workspace
+	### Create a Monitoring workspace
 3. In the Google Cloud Platform Console, click on Navigation menu > Monitoring.
 4. Click on Settings option from the left panel and confirm that the GCP project which Qwiklabs created for you is shown under the GCP Projects section.
 5. Run the commands shown on screen in the SSH window of your VM instance to install both the Monitoring and Logging agents.
