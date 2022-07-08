@@ -1,5 +1,6 @@
 Task 1: Working with backends
-	### Add a local backend
+
+### Add a local backend
 1. Create your main.tf configuration file:
 	```
 	touch main.tf
