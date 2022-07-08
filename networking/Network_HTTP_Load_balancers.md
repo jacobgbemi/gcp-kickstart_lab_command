@@ -6,7 +6,7 @@
 2. Set the default region:
 	```
 	gcloud config set compute/region us-central1
-	```
+	
 
 ### Task 2: Create multiple web server instances
 1. Create virtual machines in your default zone
@@ -25,7 +25,7 @@
 2. Create a firewall rule to allow external traffic to the VM instances:
 	```
 	gcloud compute firewall-rules create www-firewall-network-lb \
-    	--target-tags network-lb-tag --allow tcp:80
+    	  --target-tags network-lb-tag --allow tcp:80
         ```
 3. Run the following to list your instances
 	```
@@ -40,7 +40,7 @@
 1. Create a static external IP address for your load balancer:
 	```
 	gcloud compute addresses create network-lb-ip-1 \
- 	--region us-central1
+ 	  --region us-central1
  	```
 2. Add a legacy HTTP health check resource:
 	```
@@ -48,11 +48,11 @@
 	```
 3. Add a target pool in the same region as your instances.
 	```gcloud compute target-pools create www-pool \
-    	--region us-central1 --http-health-check basic-check
+    	      --region us-central1 --http-health-check basic-check
 	```
 4. Add the instances to the pool:
 	```gcloud compute target-pools add-instances www-pool \
-    	--instances www1,www2,www3
+    	      --instances www1,www2,www3
 	```
 5. Add a forwarding rule:
 	```
@@ -109,7 +109,7 @@
 5. Create a health check for the load balancer:
 	```
 	gcloud compute health-checks create http http-basic-check \
-    	--port 80
+    	  --port 80
     	
 6. Create a backend service:
 	```
@@ -129,12 +129,12 @@
 8. Create a URL map to route the incoming requests to the default backend service:
 	```
 	gcloud compute url-maps create web-map-http \
-    	--default-service web-backend-service
+    	   --default-service web-backend-service
     	
 9. Create a target HTTP proxy to route requests to your URL map:
 	```
 	gcloud compute target-http-proxies create http-lb-proxy \
-    	--url-map web-map-http
+    	   --url-map web-map-http
 	
 10. Create a global forwarding rule to route incoming requests to the proxy:
 	```
