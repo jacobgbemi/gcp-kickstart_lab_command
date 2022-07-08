@@ -1,6 +1,5 @@
 ### Task 1. Use modules from the Registry
-	
-	### Create a Terraform configuration
+#### Create a Terraform configuration
 1. Clone the example simple project from the Google Terraform modules GitHub repository and switch to the v3.3.0 branch.
 	```
 	git clone https://github.com/terraform-google-modules/terraform-google-network
@@ -66,7 +65,7 @@
 	├── outputs.tf
 	```
 
-	### Create a module
+### Create a module
 1. Create the directory for your new module:
 	```
 	cd ~
