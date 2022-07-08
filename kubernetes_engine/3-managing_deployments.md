@@ -1,39 +1,63 @@
-Task 1: Setup
+### Task 1: Setup
 1. Set zone
+	```
 	gcloud config set compute/zone us-central1-a
+	```
 2. Get the sample code for creating and running containers and deployments:
+	```
 	gsutil -m cp -r gs://spls/gsp053/orchestrate-with-kubernetes .
-cd orchestrate-with-kubernetes/kubernetes
+	cd orchestrate-with-kubernetes/kubernetes
+	```
 3. Create a cluster with five n1-standard-1 nodes (this will take a few minutes to complete):
+	```
 	gcloud container clusters create bootcamp --num-nodes 5 --scopes "https://www.googleapis.com/auth/projecthosting,storage-rw"
+	```
 
 Task 2: Learn about the deployment object
 1. The explain command in kubectl can tell us about the Deployment object.
+	```
 	kubectl explain deployment
+	```
 2. We can also see all of the fields using the --recursive option.
+	```
 	kubectl explain deployment --recursive
+	```
 3. You can use the explain command as you go through the lab to help you understand the structure of a Deployment object and understand what the individual fields do.
+	```
 	kubectl explain deployment.metadata.name
+	```
 
 Task 3: Create a deployment
 1. Update the deployments/auth.yaml configuration file:
+	```
 	vi deployments/auth.yaml
+	```
 2. Start the editor:
+	```
 	i
+	```
 3. Change the image in the containers section of the Deployment to the following:
+	```
+	containers:
+	- name: auth
+	  image: "kelseyhightower/auth:1.0.0"
 	...
-containers:
-- name: auth
-  image: "kelseyhightower/auth:1.0.0"
-...
 4. Save the auth.yaml file: press <Esc> then type:
+	```
 	:wq
+	```
 5. Press <Enter>. Now let's create a simple deployment. Examine the deployment configuration file:
+	```
 	cat deployments/auth.yaml
+	```
 6. Go ahead and create your deployment object using kubectl create:
+	```
 	kubectl create -f deployments/auth.yaml
+	```
 7. Once you have created the Deployment, you can verify that it was created.
+	```
 	kubectl get deployments
+	```
 8. Verify that a ReplicaSet was created for the Deployment:
 	kubectl get replicasets
 9. The single Pod is created by the Kubernetes when the ReplicaSet is created.
