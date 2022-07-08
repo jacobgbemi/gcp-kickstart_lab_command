@@ -89,7 +89,7 @@
 	```
 	gcloud compute instance-groups managed create lb-backend-group \
    	--template=lb-backend-template --size=2 --zone=us-central1-a
-	```
+	
 3. Create the fw-allow-health-check firewall rule
 	```
 	gcloud compute firewall-rules create fw-allow-health-check \
@@ -99,18 +99,18 @@
 	    --source-ranges=130.211.0.0/22,35.191.0.0/16 \
 	    --target-tags=allow-health-check \
 	    --rules=tcp:80
-    	```
+    	
 4. set up a global static external IP address that your customers use to reach your load balancer.
 	```
 	gcloud compute addresses create lb-ipv4-1 \
 	    --ip-version=IPV4 \
 	    --global
-    	```
+    	
 5. Create a health check for the load balancer:
 	```
 	gcloud compute health-checks create http http-basic-check \
     	--port 80
-    	```
+    	
 6. Create a backend service:
 	```
 	gcloud compute backend-services create web-backend-service \
@@ -118,24 +118,24 @@
 	    --port-name=http \
 	    --health-checks=http-basic-check \
 	    --global
-    	```
+    	
 7. Add your instance group as the backend to the backend service:
 	```
 	gcloud compute backend-services add-backend web-backend-service \
 	    --instance-group=lb-backend-group \
 	    --instance-group-zone=us-central1-a \
 	    --global
-    	```
+    	
 8. Create a URL map to route the incoming requests to the default backend service:
 	```
 	gcloud compute url-maps create web-map-http \
     	--default-service web-backend-service
-    	```
+    	
 9. Create a target HTTP proxy to route requests to your URL map:
 	```
 	gcloud compute target-http-proxies create http-lb-proxy \
     	--url-map web-map-http
-	```
+	
 10. Create a global forwarding rule to route incoming requests to the proxy:
 	```
 	gcloud compute forwarding-rules create http-content-rule \
@@ -143,5 +143,5 @@
 	    --global \
 	    --target-http-proxy=http-lb-proxy \
 	    --ports=80
-    	```
+    	
 
