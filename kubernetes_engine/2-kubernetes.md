@@ -1,7 +1,7 @@
 ### Task 1. Set a default compute zone
-		```
-		gcloud config set compute/zone us-central1-a
-		```
+	```
+	gcloud config set compute/zone us-central1-a
+	```
 
 ### Task 2. Create a GKE cluster
 1. To create a cluster
