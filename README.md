@@ -1,14 +1,14 @@
 # GOOGLE CLOUD PLATFORM
 
-Google cloud makes it convenient to migrate on-prmises resources into cloud.
+Google cloud makes it convenient to migrate on-premises resources into cloud.
 Google cloud console is easy to use and navigate.
-This is documentation of some few commands I learned when preparing for Google Cloud Associate CLoud Engineer (ACE) certification.
+This is documentation of some few commands I learned when preparing for Google Cloud Associate Cloud Engineer (ACE) certification.
 
 
 ## How to use the files
 - Start with the files in this folder, [fundamentals](https://github.com/jacobgbemi/gcp-kickstart_lab_command/tree/main/fundamentals).
 - Then explore the rest of the files based on  your learning progress
-- Remember that you can perform most of the tasks in ```google cloud console```, with using the ```cammand line interface```
+- Remember that you can perform most of the tasks in ```google cloud console```, without using the ```cammand line interface```
 - Also, note that Google always update these programs, therefore double check to ensure the commands are still valid.
 
 
